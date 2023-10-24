@@ -25,11 +25,12 @@ For Windows, use cmd terminal
 
 Running the app:
 1. Set your OpenAI API to a OPENAI_API_KEY var in a .env file in the root directory of the project.
-2. Ingest the PDF with 
+2. Add your document you would like to run retrieval on to the documents directory, and edit the path passed to the documents variable in ingest.py
+3. Ingest the PDF with 
 ```
 python ingest.py
 ```
-3. Run the app with 
+4. Run the app with 
 ```
 streamlit run app.py
 ```

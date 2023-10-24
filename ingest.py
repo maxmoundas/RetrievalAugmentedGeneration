@@ -62,7 +62,7 @@ def extract_text_with_sections_and_page_numbers(pdf_path):
 
 def ingest_docs():
     """Get documents from a PDF."""
-    documents = extract_text_with_sections_and_page_numbers("NIST.SP.800-61r2.pdf")
+    documents = extract_text_with_sections_and_page_numbers("documents\\NIST.SP.800-61r2.pdf")
     logger.info("Finished parsing pdf text")
 
     embeddings = OpenAIEmbeddings()
