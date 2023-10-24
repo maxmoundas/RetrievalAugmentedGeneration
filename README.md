@@ -4,6 +4,7 @@ Dependencies:
 For Windows, use cmd terminal
 1. Create a new virtual env: python -m venv venv
 2. Activate the virtual env: 
+   
    Unix: 
    ```
    source venv/bin/activate
@@ -13,6 +14,7 @@ For Windows, use cmd terminal
    venv\Scripts\activate.bat
    ```
 3. Install requirements: 
+   
    Unix:
    ```
    ./install_dependencies.sh
