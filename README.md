@@ -1,6 +1,22 @@
 # Multi-RAG: A Multi-Retrieval GPT-4 Prototype
 
-Dependencies:
+## Summary
+
+This application is designed to provide retrieval-augmented generation (RAG) capabilities on any given document. By utilizing the power of GPT-4 and embeddings from OpenAI, the application can quickly search for and identify relevant passages in a document to generate comprehensive responses to user queries. The application can ingest content from PDF files, vectorize the text for similarity searches, and generate responses that integrate the most pertinent information from the document.
+
+## Components
+1. ingest.py
+   * Extracts text from PDF documents with sections and page numbers.
+   * Uses the pdfminer library to handle PDF content.
+   * Embeds text segments using OpenAI's embeddings and stores them in a FAISS vector store for efficient similarity searches.
+2. app.py
+   * Utilizes streamlit to provide a user-friendly interface for users to input queries.
+   * When a query is entered, it:
+      * Searches the FAISS vector store to identify the most relevant passages from the ingested document.
+      * Generates a comprehensive response that integrates this information using a chain model (LLMChain).
+      * Outputs the generated response to the user.
+
+## Dependencies:
 For Windows, use cmd terminal
 1. Create a new virtual env: python -m venv venv
 2. Activate the virtual env: 
