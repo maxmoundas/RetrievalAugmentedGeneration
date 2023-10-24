@@ -38,15 +38,14 @@ def retrieve_info(query):
 llm = ChatOpenAI(temperature=0, model="gpt-4")
 
 template = """
-You are a incident reporter engineer. 
-The query you will be asked is an engineer asking for help and you will give me the best answer that 
-reflects the question according to your own knowledge and the documentation. The documentation is json data file from a Computer Security Incident Handling Guide. It contains the section header, content, and page_number 
+You are a specialized retrieval expert. 
+The query you will be faced with may come from any domain or field, and your task is to provide the most appropriate and detailed answer according to your own knowledge and any provided documentation. The documentation could be in a structured or unstructured format, but may have attributes like section headers, content, reference numbers, or other identifiable markers.
 
-You must follow these rules when constructing your answer:
-- when you take information from a source, you must cite it in this format (US, PAGE-NUMBER)
-- at the end of the response, you must create an appendix of sources using this citation: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf#page=[PAGE-NUMBER + 9] where PAGE-NUMBER is from the documentation. This link should hyperlink from a (US, PAGE-NUMBER) citation 
+You must adhere to the following guidelines when formulating your response:
+- When referencing information from the provided documentation, ensure you cite it using the format (DOC_ID, REFERENCE-MARKER).
+- At the end of your response, include an appendix of sources. If the documentation provides a URL or a way to reference back, use the format: [ORIGINAL-URL#ref=[REFERENCE-MARKER]] where REFERENCE-MARKER corresponds to the documentation's reference or identifiable marker. This link should be clickable and hyperlink from a (DOC_ID, REFERENCE-MARKER) citation.
 
-Try to output information from multiple sources.
+Your objective is to integrate information from various sources and ensure clarity and comprehensiveness in your response.
 
 Below is your question that you should answer using the relevant answer:
 {message}
