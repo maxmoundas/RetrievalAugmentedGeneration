@@ -8,7 +8,7 @@ import pickle
 from dotenv import load_dotenv
 from openai.embeddings_utils import get_embedding, cosine_similarity
 
-#Stores api key into the vectorstore
+# Stores api key into the vectorstore
 load_dotenv()
 
 import numpy as np
@@ -62,7 +62,7 @@ def extract_text_with_sections_and_page_numbers(pdf_path):
 
 def ingest_docs():
     """Get documents from a PDF."""
-    documents = extract_text_with_sections_and_page_numbers("documents\\NIST.SP.800-61r2.pdf")
+    documents = extract_text_with_sections_and_page_numbers('AttentionIsAllYouNeed.pdf')
     logger.info("Finished parsing pdf text")
 
     embeddings = OpenAIEmbeddings()

@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 load_dotenv(find_dotenv())
 
 
-# 1. Vectorise the sales response csv data
+# 1. Vectorize the document
 logging.info("loading vectorstore")
 if not Path("faiss_vectorstore.pkl").exists():
     raise ValueError("faiss_vectorstore.pkl does not exist, please run ingest.py first")
